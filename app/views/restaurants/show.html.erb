@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %> </h1>
+<h2><%= @restaurant.category %></h2>
+<h3><%= @restaurant.address %></h3>
+
+
+<%= link_to 'delete', restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?" }  %>
+<%= link_to 'update', edit_restaurant_path %>
+<%= link_to 'back', restaurants_path %>
+<br>
+<br>
+<% @restaurant.reviews.each do |review| %>
+<%= review.content %>
+<%= review.rating % %>
+<% end %>
